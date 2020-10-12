@@ -1,0 +1,22 @@
+#will show all  instance of a vacation that youve had or want to
+#the ones you want to have will have a star next to it
+
+
+
+<div class="center">
+
+  <div class="info">
+   
+    <p><strong>Name:</strong> <%= @user.name %></p>
+   
+    <p><strong>Your Vacations!</strong></p> 
+    <ul>
+    <% @vacation.all.each do |vacation| %>
+        <%= vacation.location %>
+        <%= vacation.enjoyment_rating %>
+        
+        
+    <% end %>
+    </ul>
+  </div>
+</div> 
