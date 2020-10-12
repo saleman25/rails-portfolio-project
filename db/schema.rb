@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 2020_10_12_013900) do
 
   create_table "locations", force: :cascade do |t|
     t.string "country"
-    t.string "state"
-    t.string "city"
     t.integer "user_id"
     t.integer "vacation_id"
     t.datetime "created_at", precision: 6, null: false
@@ -32,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_10_12_013900) do
   end
 
   create_table "vacations", force: :cascade do |t|
+    t.string "city"
     t.text "description"
     t.integer "enjoyment_rating"
     t.integer "duration"
