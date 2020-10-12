@@ -4,6 +4,8 @@ class CreateLocations < ActiveRecord::Migration[6.0]
       t.string  :country
       t.string  :state 
       t.string  :city
+      t.integer :user_id
+      t.integer :vacation_id
 
       t.timestamps
     end
