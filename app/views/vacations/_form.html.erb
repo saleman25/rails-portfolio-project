@@ -1,0 +1,34 @@
+#form for edit and new 
+
+<%= form_form @vacation do |f| %>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <br>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :enjoyment_rating, "On a scale of 1-5 how much did you enjoy your trip?" %>
+      <br>
+      <%= f.number_field :enjoyment_rating, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :duration, "How long where you there" %>
+      <br>
+      <%= f.integer_field :duration, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :solo_traveler, "Did you go alone?" %>
+      <br>
+      <%= f.check_box :solo_traveler, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <br/>
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  
+  <% end %> 
