@@ -1,6 +1,9 @@
+<% if @user.errors.any? %>
+<%= render partial: '/errors', locals: { record: @user } %>
+<% end %> 
+
 <%= form_for @user do |f| %>
      
-    #  error codes here
   
     <div class="form-group">
       <%= f.label :name %>

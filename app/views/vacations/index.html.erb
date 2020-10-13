@@ -11,12 +11,12 @@
    
     <p><strong>Your Vacations!</strong></p> 
     <ul>
+    
     <% @vacation.all.each do |vacation| %>
-        <%= vacation.location %>
+        <%= vacation.city %>
         <%= vacation.enjoyment_rating %>
-        
-        
     <% end %>
+
     </ul>
   </div>
 </div> 
