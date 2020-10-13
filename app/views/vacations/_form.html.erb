@@ -4,6 +4,10 @@
     #<%= %>
     #text_filed for city 
 
+    <% if @vacation.errors.any? %>
+    <%= render partial: '/errors', locals: { record: @vacation } %>
+    <% end %> 
+
 <div class="form-group">
     <%= f.label :country %>
     <br>
