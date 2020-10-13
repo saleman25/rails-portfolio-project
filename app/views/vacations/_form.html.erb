@@ -1,11 +1,25 @@
 #form for edit and new 
-
-<%= form_form @vacation do |f| %>
-
-    #location label for city country 
+ #location label for city country 
     #country has a select tag n thats where i implement the scraper 
     #<%= %>
     #text_filed for city 
+
+<div class="form-group">
+    <%= f.label :country %>
+    <br>
+    <%= f.select_tag "Countries:", options_for_select(<%= scrape_locations %>)
+    </div>
+
+
+
+
+<%= form_form @vacation do |f| %>
+
+    <div class="form-group">
+    <%= f.label :city, "Please enter a city name" %>
+    <br>
+    <%= f.text_field :city, class: "form-control" %>
+    </div>
 
     <div class="form-group">
       <%= f.label :description %>
