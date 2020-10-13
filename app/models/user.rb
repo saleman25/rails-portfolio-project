@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-    has_many :vacations 
-    has_many :locations through: :vacations 
+    has_many :vacation 
+    has_many :location, through: :vacation 
 end

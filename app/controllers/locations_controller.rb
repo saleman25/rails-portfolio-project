@@ -1,5 +1,15 @@
 class LocationsController < ApplicationController
 
+    def index 
+        @location = Location.all 
+    end 
+
+    def new 
+
+    end 
+    
+    
+    
     def create 
         if country = country blah blah
         else 

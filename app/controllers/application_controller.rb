@@ -1,16 +1,15 @@
 class ApplicationController < ActionController::Base
+    
     before_action :verified_user
     helper_method :current_user
 
-def welcome
-    render 'welcome'
-end 
+private 
 
 def verified_user 
-    redirect_to welcome unless user_is_authenticated 
+    redirect_to '/' unless user_is_authenticated 
 end 
 
-def user_authenticated 
+def user_is_authenticated 
     !!current_user
 end 
 
