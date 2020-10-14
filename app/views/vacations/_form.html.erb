@@ -1,11 +1,6 @@
-
-
-    <% if @vacation.errors.any? %>
-    <%= render partial: '/errors', locals: { record: @vacation } %>
-    <% end %> 
-
-
-
+<% if @vacation.errors.any? %>
+<%= render partial: '/errors', locals: { record: @vacation } %>
+<% end %> 
 
 
 <%= form_for @vacation do |f| %>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   delete '/session/', to: 'session#destroy'
   root 'static#home'
+  match 'auth/github/callback', to: 'session#create', via: [:get, :post]
   #sequence/sequence id /postures => vacation/vacation id / location or would it be => user / user id / location
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

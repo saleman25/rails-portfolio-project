@@ -17,6 +17,7 @@ end
 
 def create 
     @vacation = Vacation.create(vacation_params)
+    byebug
     if params[:solo_traveler] == "yes"
         @vacation.solo_traveler = true 
     else 
@@ -46,7 +47,7 @@ def set_vacation
 end 
 
 def vacation_params 
-    params.require(:vacation).permit(:country, :state, :city, :description, :enjoyment_rating, :duration)
+    params.require(:vacation).permit(:country, :city, :description, :enjoyment_rating, :duration)
 end 
 
 end
