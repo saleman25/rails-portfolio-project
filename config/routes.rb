@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :locations
-  resources :vacations
+  
+  
+  resources :visits
+  resources :vacations do 
+    resources :locations
+  end 
   resources :users
   get '/login', to: 'session#new'
   post '/login', to: 'session#create'

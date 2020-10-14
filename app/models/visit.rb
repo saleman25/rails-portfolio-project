@@ -1,4 +1,4 @@
-class Location < ApplicationRecord
+class Visit < ApplicationRecord
     belongs_to :user
     belongs_to :vacation
 end

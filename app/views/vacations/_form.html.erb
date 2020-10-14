@@ -1,8 +1,4 @@
-#form for edit and new 
- #location label for city country 
-    #country has a select tag n thats where i implement the scraper 
-    #<%= %>
-    #text_filed for city 
+
 
     <% if @vacation.errors.any? %>
     <%= render partial: '/errors', locals: { record: @vacation } %>
@@ -13,6 +9,16 @@
 
 
 <%= form_for @vacation do |f| %>
+    
+    
+    <%= f.label :country %>
+    <select name="country" >
+    <% LocationScraper.scrape_locations.each do |country| %>
+        <option> <%= country %> </option> 
+        <% end %> 
+        </select>
+        
+        
 
     <div class="form-group">
     <%= f.label :city, "Please enter a city name" %>

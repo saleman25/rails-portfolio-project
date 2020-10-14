@@ -7,11 +7,11 @@
 
   <div class="info">
    
-    <p><strong>Name:</strong> <%= @user.name %></p>
+    <p><strong>Name:</strong> <%= @user.username %></p>
    
     <p><strong>Your Vacations!</strong></p> 
     <ul>
-    
+
     <% @vacation.all.each do |vacation| %>
         <%= vacation.city %>
         <%= vacation.enjoyment_rating %>
