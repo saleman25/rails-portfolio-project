@@ -16,15 +16,18 @@ def new
 end 
 
 def create 
-    @vacation = Vacation.create(vacation_params)
-    byebug
+    
+    @vacation = Vacation.new(vacation_params)
     if params[:solo_traveler] == "yes"
         @vacation.solo_traveler = true 
     else 
         @vacation.solo_traveler = false 
     end 
+    @vacation.country = params[:country]
+    
+    
     if @vacation.save
-        redirect_to vacations_path(vacation)
+        redirect_to vacation_path(@vacation)
     else 
         redirect_to new_vacation_path
 end 
