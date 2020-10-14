@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
 private 
 
 def verified_user 
-    redirect_to '/' unless user_is_authenticated 
+    redirect_to '/' unless logged_in?
 end 
 
-def user_is_authenticated 
+def logged_in?
     !!current_user
 end 
 
@@ -17,5 +17,8 @@ def current_user
     User.find_by(id: session[:user_id])
 end 
 
+# def log_in(user)
+#     sessions[:user_id] = user.id 
+# end 
 
 end

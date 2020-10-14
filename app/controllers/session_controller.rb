@@ -2,20 +2,22 @@ class SessionController < ApplicationController
 skip_before_action :verified_user, only: [:new, :create] 
 
 def new
-    @users = User.new
+    @user = User.new
 end 
 
 def create 
-    if @user = User.find_by(id: params[:user][:name])
-        session[:user_id] = @user.id 
-        redirect_to new_user_path
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.user_id 
+        redirect_to vacations_path
     else
+        @error = "Invalid login, please try again."
         render 'new'
     end 
 end 
 
 def destroy
-    session.delete('user_id')
+    session.clear
     redirect_to root_path 
 end 
 

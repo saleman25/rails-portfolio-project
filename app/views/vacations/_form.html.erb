@@ -8,16 +8,11 @@
     <%= render partial: '/errors', locals: { record: @vacation } %>
     <% end %> 
 
-<div class="form-group">
-    <%= f.label :country %>
-    <br>
-    <%= f.select_tag "Countries:", options_for_select(<%= scrape_locations %>)
-    </div>
 
 
 
 
-<%= form_form @vacation do |f| %>
+<%= form_for @vacation do |f| %>
 
     <div class="form-group">
     <%= f.label :city, "Please enter a city name" %>
@@ -40,7 +35,7 @@
     <div class="form-group">
       <%= f.label :duration, "How long where you there" %>
       <br>
-      <%= f.integer_field :duration, class: "form-control" %>
+      <%= f.number_field :duration, class: "form-control" %>
       #option tag for duration eg weeks months days
     </div>
 

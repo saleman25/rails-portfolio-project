@@ -14,7 +14,7 @@ end
 
 def create 
     @vacation = Vacation.create(vacation_params)
-    redirect_to vacation_path(vacation)
+    redirect_to vacation_path
 end 
 
 def edit 
