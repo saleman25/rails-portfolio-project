@@ -12,6 +12,7 @@
     
     
     <%= f.label :country %>
+    <br>
     <select name="country" >
     <% LocationScraper.scrape_locations.each do |country| %>
         <option> <%= country %> </option> 
@@ -42,14 +43,18 @@
       <%= f.label :duration, "How long where you there" %>
       <br>
       <%= f.number_field :duration, class: "form-control" %>
-      #option tag for duration eg weeks months days
+      
     </div>
 
     <div class="form-group">
       <%= f.label :solo_traveler, "Did you go alone?" %>
       <br>
-      <%= f.check_box :solo_traveler, class: "form-control" %>
+      <select name="solo_traveler" >
+      <option value="yes">Yes</option>
+      <option value="no">No</option 
+      </select> 
     </div>
+    <br>
 
     <div class="actions">
       <br/>

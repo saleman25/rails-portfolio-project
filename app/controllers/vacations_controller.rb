@@ -1,4 +1,6 @@
 class VacationsController < ApplicationController
+    
+
 
 def index 
     @user = current_user
@@ -15,8 +17,17 @@ end
 
 def create 
     @vacation = Vacation.create(vacation_params)
-    redirect_to vacation_path
+    if params[:solo_traveler] == "yes"
+        @vacation.solo_traveler = true 
+    else 
+        @vacation.solo_traveler = false 
+    end 
+    if @vacation.save
+        redirect_to vacations_path(vacation)
+    else 
+        redirect_to new_vacation_path
 end 
+end
 
 def edit 
     set_vacation
@@ -35,7 +46,7 @@ def set_vacation
 end 
 
 def vacation_params 
-    params.require(:vacation).permit(:country, :state, :city, :description, :enjoyment_rating, :duration, :solo_traveler)
+    params.require(:vacation).permit(:country, :state, :city, :description, :enjoyment_rating, :duration)
 end 
 
 end
