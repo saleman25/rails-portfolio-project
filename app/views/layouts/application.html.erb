@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+  <div class="topnav">
+    <a class="active" href="/vacations">Home</a>
+    <a href="/vacations/new">Add a Vacation</a>
+    <a href="#news">Places You've Visited</a>
+    <a href="#contact">Places You Want to Visit</a>
+    <a href="#about">Logout</a>
+  </div>
+
+
     <title>RailsProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,5 +21,9 @@
 
   <body>
     <%= yield %>
+
+    
+
+
   </body>
 </html>

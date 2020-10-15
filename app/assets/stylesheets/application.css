@@ -15,9 +15,9 @@
  *= require_self
  */
 
-
  
-
+ 
+ 
 
 body {
     background-color:  #b3ffd9;
@@ -28,10 +28,13 @@ body {
     text-align: center;
   }
 
-a:link { color: 
-    #003300; }
+#link { 
+    color: 
+    #003300;
+    text-decoration: none;
+ }
     
-a:visited { color: 009900; }
+#link:hover { color: #009900; }
   
 
 .wrapper {
@@ -44,3 +47,39 @@ a:visited { color: 009900; }
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
 }
+
+
+
+.topnav {
+    background-color: #006666;
+    overflow: hidden;
+    
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    border-style: solid;
+    border-color: #008080;
+    border-width: thin;
+    text-decoration: none;
+    font-size: 16px;
+    
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color:  #b3ffff;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color:  #00b3b3;
+    color: white;
+  }
+
+  

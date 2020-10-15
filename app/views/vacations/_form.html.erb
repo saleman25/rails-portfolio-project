@@ -10,7 +10,8 @@
     <br>
     <select name="country" >
     <% LocationScraper.scrape_locations.each do |country| %>
-        <option> <%= country %> </option> 
+      <option value="" disabled selected hidden>Choose a Country...</option>  
+      <option> <%= country %> </option> 
         <% end %> 
         </select>
         

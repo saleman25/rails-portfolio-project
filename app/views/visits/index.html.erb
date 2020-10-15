@@ -1,9 +1,5 @@
 <h1> Places You've Visited </h2>
-#link to create a new
-<% @vacation.visit each do |visit| %>
-    visit.vacation.country
-    visit.vacation.city
-    <% end %>
+<%= render partial: '/visits', locals: { record: @vacation } %>
 
-    <% else %>
+  
 
