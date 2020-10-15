@@ -30,9 +30,16 @@ end
 
 def update 
     set_vacation
-    vacation.update(vacation_params)
-    redirect_to vacation_path(vacation)
+    @vacation.update(vacation_params)
+    redirect_to vacations_path
 end
+
+def destroy 
+    set_vacation 
+    @vacation.destroy 
+    redirect_to vacations_path 
+end 
+
 
 private 
 

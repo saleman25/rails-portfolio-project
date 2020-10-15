@@ -18,5 +18,7 @@
        <p> <%= @vacation.enjoyment_rating %>/5 </p>
        
     
-       #  <%= link_to "Edit Vacation", '/vacations/<%=@vacation.id%>/edit' %>
-       
+       <%= link_to "Edit", edit_vacation_path(@vacation) %>       
+<br>
+<br>
+<%= link_to "Delete", @vacation, :method => :delete %>

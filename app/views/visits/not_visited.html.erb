@@ -1,3 +1,6 @@
  <h2> Places You Want to Visit </h2>
  <%= render partial: '/visits', locals: { record: @vacation } %>
     
+
+ <% @vacation.visit.have_you_been_there == false %>
+<% @vacation.visit.have_you_been_there.each do |v| %>
