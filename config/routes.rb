@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :users
   get '/login', to: 'session#new'
   post '/login', to: 'session#create'
-  delete '/session/', to: 'session#destroy'
+  delete '/logout', to: 'session#destroy'
+  match '/logout', to: 'session#destroy', via: 'delete'
   root 'static#home'
   match 'auth/github/callback', to: 'session#create', via: [:get, :post]
   #sequence/sequence id /postures => vacation/vacation id / location or would it be => user / user id / location

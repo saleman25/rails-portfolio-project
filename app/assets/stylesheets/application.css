@@ -19,7 +19,7 @@
  
 
 
- body {
+body {
     background-color:  #b3ffd9;
     color: 
     #003300;
@@ -28,7 +28,19 @@
     text-align: center;
   }
 
-  a:link { color: 
+a:link { color: 
     #003300; }
+    
 a:visited { color: 009900; }
   
+
+.wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+}

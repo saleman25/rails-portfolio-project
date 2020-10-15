@@ -3,15 +3,22 @@
 
 
    
-    <p><strong>Welcome</strong> <%= @user.username %></p>
+   <h1>Welcome <%= @user.username %></h1>
    
-    <p><strong>Your Vacations!</strong></p> 
+    <h2>Your Vacations!</h2> 
+    
     <ul>
 
-    <% @vacation.all.each do |vacation| %>
-        <%= vacation.city %>
-        <%= vacation.enjoyment_rating %>
+    <% @vacation.each do |vacation| %>
+      <h3> <a id="link" href="/vacations/<%=vacation.id%>"> <%= vacation.country  %> <%= vacation.city  %> <%= vacation.enjoyment_rating %>/5 <br> </a> </h3>
     <% end %>
 
     </ul>
   
+
+    <br>
+    <br>
+    <%= link_to "Add a New Vacation", '/vacations/new' %>
+    <br>
+    <br>
+    <%= link_to "Logout", '/logout' %>
