@@ -1,4 +1,12 @@
-<% @vacation.visit each do |visit| %>
-    visit.vacation.country
-    visit.vacation.city
-    <% end %>
+<% if @vacation = @vacation.visit.has_been %>
+<% @vacation.each do |visit| %>
+<%= vacation.country %>
+<%= vacation.city %>
+
+
+<% else %>
+<% @vacation = @vacation.visit.has_not_been %>
+<% @vacation.each do |visit| %>
+    <%= vacation.country %>
+    <%= vacation.city %>
+<% end %>

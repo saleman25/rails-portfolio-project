@@ -1,10 +1,8 @@
 class VacationsController < ApplicationController
     
-
-
 def index 
     @user = current_user 
-    @vacation = @user.vacations
+    @vacation = Vacation.all 
 end 
 
 def show 
@@ -19,7 +17,7 @@ def create
     @vacation = Vacation.new(vacation_params)
     set_solo_traveler
     set_country
-    if @vacation.save
+    if @vacation.save 
         redirect_to vacation_path(@vacation)
     else 
         render 'new'

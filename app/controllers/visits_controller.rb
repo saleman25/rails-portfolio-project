@@ -5,12 +5,14 @@ def index
 end 
 
 def have_been 
-    @visit = Visit.has_been
+    get_vacation
+    @visit = Visit.vacation.has_been
     render 'index'
 end 
 
 def have_not_been
-    @visit = Visit.has_not_been 
+    get_vacation
+    @visit = Visit.vacation.has_not_been 
     render 'index'
 end
 
@@ -25,7 +27,7 @@ def create
     @visit = Visit.new(visit_params)
     byebug
     if @visit.save
-        redirect_to vacation_visits_path(@visit.vacation)
+        redirect_to vacation_visit_path(@visit.vacation)
     else 
         render 'new'
 end 
