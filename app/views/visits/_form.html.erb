@@ -1,39 +1,9 @@
-<% if @visit.errors.any? %>
-<%= render partial: '/errors', locals: { record: @vacation } %>
-<% end %> 
-
-
-<%= form_for @visit do |f| %>
-    
-    
-    <%= f.label :vacation %>
-    <br>
-    <select name="vacation" >
-    <% @vacation.each do |vacation| %>
-      <%= vacation.country  %>, <%= vacation.city  %>
-    <% end %> %>
-        <option> <%= country %> </option> 
+        <%= form_for(@visit, url: vacation_visits_path( @vacation )) do |f| %>
+            <div class="form-group">
+            <%= f.label :have_you_visited_before, "Have You Been?" %>
+            <br>
+            <%= f.select :have_you_visited_before, options_for_select([['Yes', true], ['No', false]], selected: @visit.have_you_visited_before),{}%>
+          </div>
+          <br>
+        <%= f.submit %>
         <% end %> 
-        </select>
-        
-        
-
-    
-    <div class="form-group">
-      <%= f.label :have_you_visited_before, "Have You Been Before?" %>
-      <br>
-      <select name="have_you_visited_before" >
-      <option value="yes">Yes</option>
-      <option value="no">No</option 
-      </select> 
-    </div>
-    <br>
-
-    <%= f.hidden_field :vacation_id, value: @vacation.id %>
-
-    <div class="actions">
-      <br/>
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
-  
-  <% end %> 

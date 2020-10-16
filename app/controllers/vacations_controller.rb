@@ -1,8 +1,10 @@
 class VacationsController < ApplicationController
     
+
+
 def index 
-    @user = current_user
-    @vacation = Vacation.all 
+    @user = current_user 
+    @vacation = @user.vacations
 end 
 
 def show 
@@ -20,7 +22,7 @@ def create
     if @vacation.save
         redirect_to vacation_path(@vacation)
     else 
-        redirect_to new_vacation_path
+        render 'new'
 end 
 end
 

@@ -1,4 +1,6 @@
-
+<% if @vacation.errors.any? %>
+<%= render partial: '/errors', locals: { record: @vacation } %>
+<% end %> 
 
 
 <%= form_for @vacation do |f| %>
@@ -43,10 +45,8 @@
     <div class="form-group">
       <%= f.label :solo_traveler, "Did you go alone?" %>
       <br>
-      <select name="solo_traveler" >
-      <option value="yes">Yes</option>
-      <option value="no">No</option 
-      </select> 
+      <%= f.check_box :solo_traveler, {}, "true" %> Yes
+      <%= f.check_box :solo_traveler, {}, "false" %> No
     </div>
     <br>
 
