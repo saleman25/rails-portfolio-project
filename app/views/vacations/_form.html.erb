@@ -45,7 +45,7 @@
     <div class="form-group">
       <%= f.label :solo_traveler, "Did you go alone?" %>
       <br>
-      <%= f.select :solo_traveler, options_for_select([['Yes', true], ['No', false]], selected: @vacation.solo_traveler),{}%>
+      <%= f.select :solo_traveler, options_for_select([['Yes', 'yes'], ['No', 'no']], selected: @vacation.solo_traveler),{}%>
     </div>
     <br>
 

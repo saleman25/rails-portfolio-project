@@ -48,7 +48,7 @@ def set_vacation
 end 
 
 def set_solo_traveler
-    if params[:solo_traveler] == "yes"
+    if params[:vacation][:solo_traveler] == "yes"
         @vacation.solo_traveler = true 
     else 
         @vacation.solo_traveler = false 

@@ -24,10 +24,12 @@ end
 
 def create 
     @vacation = Vacation.find_by(id: params[:visit][:vacation_id])
-    @visit = Visit.new(visit_params)
-    byebug
+    @visit = Visit.new
+    set_have_you_visited
+    set_user
+    set_vacation
     if @visit.save
-        redirect_to vacation_visit_path(@visit.vacation)
+        redirect_to vacation_visit_path(@vacation, @visit)
     else 
         render 'new'
 end 
@@ -40,8 +42,20 @@ def get_vacation
 end 
 
 
-def visit_params 
-    params.require(:visit).permit(:user_id, :vacation_id, :have_you_visited_before)
+def set_have_you_visited
+    if params[:visit][:have_you_visited_before] == "yes"
+        @visit.have_you_visited_before = true 
+    else 
+        @visit.have_you_visited_before = false 
 end 
+end
+
+def set_user 
+    @visit.user_id = current_user.id
+end 
+
+def set_vacation
+    @visit.vacation_id = @vacation.id
+end
 
 end
