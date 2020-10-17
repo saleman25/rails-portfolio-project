@@ -17,7 +17,7 @@ def create
     else
         @user = User.find_by(username: params[:username])
         if !@user 
-            @error = "We're sorry, we can't seem to find you"
+            @error = "I'm sowwwwy we can't find you :3"
             render :new 
         elsif !@user.authenticate(params[:password])
             @error = "Something not matchy pwease twy again"

@@ -4,15 +4,12 @@ class Visit < ApplicationRecord
 
 
 def self.has_been
-    where(have_you_been_there: true)
+    where(have_you_visited_before: true)
 end 
 
 def self.has_not_been
-   where(have_you_been_there: false)
+   where(have_you_visited_before: false)
 end 
-
-scope :have_you_been_there, -> {where(have_you_been_there: true)}
-scope :have_you_been_there, -> {where(have_you_been_there: false)}
 
 
 end

@@ -5,7 +5,7 @@ class CreateVacations < ActiveRecord::Migration[6.0]
       t.string  :city
       t.text  :description
       t.integer :enjoyment_rating  
-      t.integer :duration
+      t.string :duration
       t.boolean :solo_traveler 
 
       t.timestamps

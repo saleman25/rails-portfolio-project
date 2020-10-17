@@ -1,4 +1,5 @@
-<h1> Trip </h1>
-
-
-<%= render 'visits' %>
+<ul>
+<% @visit.each do |visit| %>
+   <li> <%= visit.vacation.country %> <%= visit.vacation.city %> </li>
+    <% end %>
+    </ul>

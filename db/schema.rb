@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_182314) do
     t.string "city"
     t.text "description"
     t.integer "enjoyment_rating"
-    t.integer "duration"
+    t.string "duration"
     t.boolean "solo_traveler"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
