@@ -1,16 +1,16 @@
 <h1>Your Vacation!</h1> 
     
 <% if @vacation.solo_traveler == true %>
-  <p>Wow! Look at you, you went alone!</p> 
+  <p>Woooo! Party of one!!!!</p> 
 <% else %> 
-  <p>i hope you had fun with your friends!</p>
+  <p>It is great to have company!</p>
 <% end %>
 
 <% if @vacation.enjoyment_rating != nil %>
   <p> It was a <%= @vacation.enjoyment_rating %> out of 5! </p>
   <% end %>         
 
-<h3> You went to <%= @vacation.country %>, <%= @vacation.city %> </h3>
+<h3> <%= @vacation.country %>, <%= @vacation.city %> </h3>
   <p> for <%= @vacation.duration %> </p>
 <h3><u> Here's what you had to say about it:</u></h3>
   <p> "<%= @vacation.description %>" </p>
