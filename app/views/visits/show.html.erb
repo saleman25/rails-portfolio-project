@@ -1,8 +1,11 @@
+<h1> Your Trip </h1>
+
+
 <%= @visit.vacation.country %>
+<%= @visit.vacation.city %>
 
 
 
-
-
-
+<br>
+<br>
 <%= link_to "Delete", vacation_visit_url(@vacation, @visit), :method => :delete %>

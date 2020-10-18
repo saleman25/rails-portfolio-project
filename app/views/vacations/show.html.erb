@@ -1,5 +1,4 @@
 <h1>Your Vacation!</h1> 
-  
     
 <% if @vacation.solo_traveler == true %>
   <p>Wow! Look at you, you went alone!</p> 
@@ -7,15 +6,21 @@
   <p>i hope you had fun with your friends!</p>
 <% end %>
 
-        
+<% if @vacation.enjoyment_rating != nil %>
+  <p> It was a <%= @vacation.enjoyment_rating %> out of 5! </p>
+  <% end %>         
+
 <h3> You went to <%= @vacation.country %>, <%= @vacation.city %> </h3>
-  <p> You were there for <%= @vacation.duration %> weeks. </p>
+  <p> for <%= @vacation.duration %> </p>
 <h3><u> Here's what you had to say about it:</u></h3>
-    <p> "<%= @vacation.description %>" </p>
-<p> It was a <%= @vacation.enjoyment_rating %>/5 </p>
+  <p> "<%= @vacation.description %>" </p>
+
        
     
-<%= link_to "Edit", edit_vacation_path(@vacation) %>       
+<%= link_to "Edit", edit_vacation_path(@vacation) %>      <%= link_to "Delete", vacation_path(@vacation), :method => :delete %>   
 <br>
 <br>
 <%= link_to "Have You Been", new_vacation_visit_path(@vacation) %> 
+<br>
+<br>
+<%= link_to "How Would You Rate This Trip?", rating_path(@vacation) %>

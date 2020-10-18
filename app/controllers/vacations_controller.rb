@@ -28,6 +28,21 @@ def edit
     set_vacation
 end 
 
+def set_rating
+ set_vacation
+ render 'rating'
+end 
+
+def rate
+    set_vacation 
+    @vacation.update(params[:enjoyment_rating])
+    if @vacation.save
+    redirect_to vacations_path(@vacation)
+    else 
+    render 'rating'
+    end 
+end 
+
 def update 
     set_vacation
     @vacation.update(vacation_params)

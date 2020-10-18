@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
   root 'static#home'
+  get '/rating/:id', to: 'vacations#set_rating', as: "rating"
+  patch '/rating/:id', to: 'vacations#rate'
   get '/visits/has_been', to: 'visits#have_been'
   get 'visits/has_not_been', to: 'visits#have_not_been'
   match 'auth/github/callback', to: 'session#create', via: [:get, :post]
