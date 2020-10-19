@@ -15,12 +15,15 @@
 <h3><u> Here's what you had to say about it:</u></h3>
   <p> "<%= @vacation.description %>" </p>
 
-       
+     <br>
+     <br>
+     <br>
+      
     
-<%= link_to "Edit", edit_vacation_path(@vacation) %>      <%= link_to "Delete", vacation_path(@vacation), :method => :delete %>   
+<%= link_to "Edit", edit_vacation_path(@vacation), :class => "linkies" %>      <%= link_to "Delete", vacation_path(@vacation), :method => :delete, :class => "linkies" %>   
 <br>
 <br>
-<%= link_to "Have You Been", new_vacation_visit_path(@vacation) %> 
+<%= link_to "Have You Been?", new_vacation_visit_path(@vacation), :class => "linkies" %> 
 <br>
 <br>
-<%= link_to "How Would You Rate This Trip?", rating_path(@vacation) %>
+<%= link_to "How Would You Rate This Trip?", rating_path(@vacation), :class => "linkies" %>
