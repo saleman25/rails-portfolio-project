@@ -1,6 +1,6 @@
 # Rails Project
 
-This project is my take on a virtual passport, where not only can you list places you've been to but you can also plan future visits!
+This project is my take on a virtual passport! Wether you have already been to a place and had a blast or you just want to plan out where you want to go. This app has got you covered!
 
 # Installation 
 
