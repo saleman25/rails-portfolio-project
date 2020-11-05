@@ -1,24 +1,17 @@
-# README
+# Rails Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is my take on a virtual passport, where not only can you list places you've been to but you can also plan future visits!
 
-Things you may want to cover:
+# Installation 
 
-* Ruby version
+* Clone this repository to your local machine.
 
-* System dependencies
+* In a terminal, navigate into the directory "rails-project".
 
-* Configuration
+* In the terminal, run `bundle install` to install all dependencies.
 
-* Database creation
+* In the terminal, run rails s to start the server.
 
-* Database initialization
+* Navigate to the local host in your browser of choice, and enjoy!
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
